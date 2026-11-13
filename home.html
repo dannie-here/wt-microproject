@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#103b32">
+<meta name="description" content="TripVista travel planning portal.">
+<title>Home Dashboard | TripVista</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+<script src="theme.js" defer></script>
+<script src="portal.js" defer></script>
+<script src="chatbot.js" defer></script>
+</head>
+
+<body class="portal-page">
+
+<div class="portal-shell dashboard-shell">
+
+    <header class="portal-topbar">
+        <a href="index.html" class="brand" aria-label="TripVista homepage">
+            <span class="brand-icon">T</span>
+            <span>Trip<span class="brand-accent">Vista</span></span>
+        </a>
+
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode">
+            <span id="themeIcon" aria-hidden="true">☾</span>
+        </button>
+    </header>
+
+    <main class="portal-dashboard">
+
+        <div class="dashboard-welcome">
+            <span class="eyebrow">YOUR TRIPVISTA SPACE</span>
+
+            <div class="dashboard-welcome-content">
+                <div>
+                    <h1>Welcome to your dashboard.</h1>
+                    <p>Keep your travel ideas, planning tools and assistant in one place.</p>
+                </div>
+
+                <button
+                    class="btn btn-outline dashboard-menu"
+                    id="dashboardMenu"
+                    type="button"
+                    aria-controls="dashboardSidebar"
+                    aria-expanded="false">
+                    ☰ Menu
+                </button>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+
+            <!-- LEFT COLUMN: NAVIGATION -->
+            <aside class="dashboard-panel dashboard-sidebar" id="dashboardSidebar">
+                <h2>Navigation</h2>
+
+                <nav class="dashboard-nav" aria-label="Dashboard navigation">
+                    <a href="index.html">TripVista Landing</a>
+                    <a href="index.html#destinations">Destinations</a>
+                    <a href="index.html#budget">Budget Calculator</a>
+                    <a href="index.html#planner">Trip Planner</a>
+                    <a href="register.html">Registration</a>
+                    <a href="signup.html">Sign Up</a>
+                    <a href="signin.html">Sign In</a>
+                </nav>
+            </aside>
+
+            <!-- MIDDLE COLUMN: DASHBOARD OVERVIEW -->
+            <section class="dashboard-main" aria-label="Dashboard overview">
+
+                <div class="dashboard-panel">
+                    <h2>Planning overview</h2>
+
+                    <div class="dashboard-stats">
+                        <div class="dashboard-stat">
+                            <strong>09+</strong>
+                            <span>Destinations to explore</span>
+                        </div>
+
+                        <div class="dashboard-stat">
+                            <strong>₹</strong>
+                            <span>Budget estimation tool</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-panel">
+                    <h2>Quick start</h2>
+
+                    <ol class="dashboard-list">
+                        <li>Choose a destination from the landing page.</li>
+                        <li>Set your dates and number of travellers.</li>
+                        <li>Estimate travel, stay, food and activity expenses.</li>
+                        <li>Save your trip outline in My Trips.</li>
+                    </ol>
+
+                    <a class="btn btn-primary" href="index.html#destinations">
+                        Explore destinations
+                    </a>
+                </div>
+
+            </section>
+
+            <!-- RIGHT COLUMN: TRIPVISTA TOOLS -->
+            <aside class="dashboard-panel dashboard-tools">
+
+                <h2>TripVista tools</h2>
+
+                <p class="portal-intro">
+                    Use these shortcuts to continue planning.
+                </p>
+
+                <nav class="dashboard-nav" aria-label="Trip planning tools">
+                    <a href="index.html#budget">Open budget calculator ↗</a>
+                    <a href="index.html#planner">Create a trip plan ↗</a>
+                    <a href="index.html#arithmeticCalculator">Arithmetic calculator ↗</a>
+                </nav>
+
+                <hr class="dashboard-divider">
+
+                <h3>Planning reminders</h3>
+
+                <ul class="dashboard-list">
+                    <li>Verify live prices before booking.</li>
+                    <li>Check local weather and travel advisories.</li>
+                    <li>Keep important documents accessible.</li>
+                </ul>
+
+            </aside>
+
+        </div>
+    </main>
+</div>
+
+<!-- FLOATING CHATBOT BUTTON -->
+<button
+    class="chat-launcher"
+    id="chatLauncher"
+    type="button"
+    aria-label="Open TripVista travel assistant"
+    aria-controls="chatPanel"
+    aria-expanded="false">
+
+    <span aria-hidden="true">✦</span>
+    <span class="chat-launcher-label">Ask TripVista</span>
+</button>
+
+<!-- CHATBOT WINDOW -->
+<section
+    class="chat-panel"
+    id="chatPanel"
+    aria-label="TripVista travel assistant"
+    hidden>
+
+    <div class="chat-header">
+        <div class="chat-avatar">T</div>
+
+        <div class="chat-header-copy">
+            <strong>TripVista Assistant</strong>
+            <span>Demo travel assistant</span>
+        </div>
+
+        <button
+            id="closeChat"
+            class="chat-close"
+            type="button"
+            aria-label="Close chat">
+            ×
+        </button>
+    </div>
+
+    <div
+        class="chat-messages portal-chat-log"
+        id="chatMessages"
+        aria-live="polite">
+
+        <div class="bot-msg">
+            Hello, traveller! Ask me about destinations, packing or budgeting.
+        </div>
+    </div>
+
+    <form id="chatForm" class="chat-form">
+        <label for="chatInput" class="sr-only">Your message</label>
+
+        <input
+            type="text"
+            id="chatInput"
+            maxlength="500"
+            placeholder="Ask a travel question..."
+            autocomplete="off"
+            required>
+
+        <button type="submit" aria-label="Send message">↑</button>
+    </form>
+
+</section>
+
+</body>
+</html>

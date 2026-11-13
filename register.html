@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#103b32">
+    <meta name="description" content="TripVista travel planning portal.">
+
+    <title>Registration | TripVista</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="theme.js" defer></script>
+    <script src="portal.js" defer></script>
+</head>
+
+<body class="portal-page">
+
+<div class="portal-shell">
+
+    <header class="portal-topbar">
+        <a href="index.html" class="brand" aria-label="TripVista homepage">
+            <span class="brand-icon">T</span>
+            <span>Trip<span class="brand-accent">Vista</span></span>
+        </a>
+
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch theme">
+            <span id="themeIcon" aria-hidden="true">☾</span>
+        </button>
+    </header>
+
+    <main class="portal-card">
+
+        <span class="eyebrow">TRIPVISTA ACCOUNT</span>
+
+        <h1>Registration</h1>
+
+        <p class="portal-intro">
+            Complete the form. Each field is checked when you leave it and again before submission.
+        </p>
+
+        <div id="registerAlert" class="portal-alert" role="alert" aria-live="polite"></div>
+
+        <form id="registerForm" class="portal-form" novalidate>
+
+            <div class="portal-field">
+                <label for="fullName">Full Name</label>
+                <input id="fullName" name="fullName" autocomplete="name" required>
+                <span class="error-msg" data-error="fullName"></span>
+            </div>
+
+            <div class="portal-field">
+                <label for="empId">Employee / Register ID</label>
+                <input id="empId" name="empId" autocomplete="off" required>
+                <span class="error-msg" data-error="empId"></span>
+            </div>
+
+            <div class="portal-field">
+                <label for="email">Email Address</label>
+                <input id="email" name="email" type="email" autocomplete="email" required>
+                <span class="error-msg" data-error="email"></span>
+            </div>
+
+            <div class="portal-field">
+                <label for="mobile">Mobile Number</label>
+                <input id="mobile" name="mobile" type="tel" inputmode="numeric" maxlength="10" required>
+                <span class="error-msg" data-error="mobile"></span>
+            </div>
+
+            <div class="portal-field">
+                <label for="dept">Division</label>
+                <select id="dept" name="dept" required>
+                    <option value="">Select division</option>
+                    <option value="CSE">CSE</option>
+                    <option value="IT">IT</option>
+                    <option value="AIML">AI &amp; ML</option>
+                    <option value="ECE">ECE</option>
+                    <option value="EEE">EEE</option>
+                    <option value="Other">Other</option>
+                </select>
+                <span class="error-msg" data-error="dept"></span>
+            </div>
+
+            <div class="portal-field">
+                <label for="password">Password</label>
+
+                <div class="password-wrap">
+                    <input id="password" name="password" type="password" autocomplete="new-password" required>
+                    <button type="button" data-show-password="password">Show</button>
+                </div>
+
+                <span class="error-msg" data-error="password"></span>
+            </div>
+
+            <div class="portal-field full">
+                <label for="confirmPassword">Confirm Password</label>
+                <input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" required>
+                <span class="error-msg" data-error="confirmPassword"></span>
+            </div>
+
+            <button id="registerSubmit" class="btn btn-primary portal-submit" type="submit" disabled>
+                Submit Registration
+            </button>
+
+        </form>
+
+        <p class="portal-note">
+            Front-end academic demonstration only. Details are validated in your browser and are not sent to a server.
+        </p>
+
+        <p class="portal-switch">
+            Already registered?
+            <a href="signin.html">Sign in</a> ·
+            <a href="index.html">Return to TripVista</a>
+        </p>
+
+    </main>
+
+</div>
+
+</body>
+</html>

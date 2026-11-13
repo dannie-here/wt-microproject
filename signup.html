@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#103b32">
+    <meta name="description" content="TripVista travel planning portal.">
+
+    <title>Sign Up | TripVista</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="theme.js" defer></script>
+    <script src="portal.js" defer></script>
+</head>
+
+<body class="portal-page">
+
+<div class="portal-shell">
+
+    <header class="portal-topbar">
+        <a href="index.html" class="brand" aria-label="TripVista homepage">
+            <span class="brand-icon">T</span>
+            <span>Trip<span class="brand-accent">Vista</span></span>
+        </a>
+
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch theme">
+            <span id="themeIcon" aria-hidden="true">☾</span>
+        </button>
+    </header>
+
+    <main class="portal-card">
+
+        <span class="eyebrow">JOIN TRIPVISTA</span>
+
+        <h1>Create your account</h1>
+
+        <p class="portal-intro">
+            A simplified demo onboarding form.
+        </p>
+
+        <div id="signupAlert" class="portal-alert" role="alert" aria-live="polite"></div>
+
+        <form id="standaloneSignupForm" class="portal-form">
+
+            <div class="portal-field full">
+                <label for="signupEmailPage">Email Address</label>
+                <input id="signupEmailPage" type="email" autocomplete="email" required>
+            </div>
+
+            <div class="portal-field full">
+                <label for="signupPassword">Create Password</label>
+
+                <div class="password-wrap">
+                    <input id="signupPassword" type="password" minlength="8" autocomplete="new-password" required>
+                    <button type="button" data-show-password="signupPassword">Show</button>
+                </div>
+            </div>
+
+            <div class="portal-field full">
+                <label for="signupConfirm">Confirm Password</label>
+                <input id="signupConfirm" type="password" minlength="8" autocomplete="new-password" required>
+            </div>
+
+            <label class="portal-checkbox">
+                <input id="signupTerms" type="checkbox" required>
+                <span>I agree to the Terms of Service and understand this is a front-end demo.</span>
+            </label>
+
+            <button class="btn btn-primary portal-submit" type="submit">
+                Create Demo Account
+            </button>
+
+        </form>
+
+        <p class="portal-note">
+            No password is stored and no real account is created.
+        </p>
+
+        <p class="portal-switch">
+            Already have an account?
+            <a href="signin.html">Sign in</a> ·
+            <a href="register.html">Full registration</a>
+        </p>
+
+    </main>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#103b32">
+    <meta name="description" content="Plan your next adventure with TripVista. Explore destinations, build itineraries and calculate your travel budget.">
+
+    <title>TripVista | Plan Your Next Adventure</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- ==================== NAVIGATION ==================== -->
+
+    <header class="site-header">
+        <nav class="navbar container" aria-label="Main navigation">
+
+            <a href="index.html#home" class="brand" aria-label="TripVista homepage">
+                <span class="brand-icon">T</span>
+                <span>Trip<span class="brand-accent">Vista</span></span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false"
+                    aria-controls="navLinks">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="index.html#home" class="nav-link active">Home</a>
+                <a href="home.html" class="nav-link">Dashboard</a>
+                <a href="#destinations" class="nav-link">Destinations</a>
+                <a href="#budget" class="nav-link nav-budget">Budget</a>
+                <a href="#planner" class="nav-link">Plan a Trip</a>
+                <a href="#about" class="nav-link">About Us</a>
+                <a href="signin.html" class="nav-auth">Sign In</a>
+                <a href="signup.html" class="nav-link">Sign Up</a>
+                <a href="register.html" class="nav-link">Register</a>
+
+                <button class="theme-toggle" id="themeToggle"
+                        aria-label="Switch to dark mode"
+                        title="Toggle light and dark mode">
+                    <span id="themeIcon" aria-hidden="true">☾</span>
+                </button>
+            </div>
+
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- ==================== HERO ==================== -->
+
+        <section class="hero" id="home">
+
+            <div class="hero-overlay"></div>
+
+            <div class="container hero-content reveal">
+
+                <span class="eyebrow hero-eyebrow">
+                    YOUR NEXT CHAPTER STARTS HERE
+                </span>
+
+                <h1>
+                    The world is wide.<br>
+                    <span>Your journey awaits.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Discover extraordinary places, create unforgettable
+                    itineraries, and plan every adventure within your budget.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#destinations" class="btn btn-primary">
+                        Explore Destinations <span aria-hidden="true">↗</span>
+                    </a>
+
+                    <a href="#budget" class="btn btn-glass">
+                        Calculate My Budget
+                    </a>
+                </div>
+
+                <div class="hero-trust">
+                    <span class="trust-dot"></span>
+                    <span>Your journey. Your budget. Your way.</span>
+                </div>
+
+            </div>
+
+            <a href="#destinations" class="scroll-cue" aria-label="Scroll to destinations">
+                <span>SCROLL TO EXPLORE</span>
+                <span class="scroll-line"></span>
+            </a>
+
+        </section>
+
+
+        <!-- ==================== QUICK STATS ==================== -->
+
+        <section class="stats-section">
+            <div class="container stats-grid">
+
+                <div class="stat-item">
+                    <span class="stat-number">09+</span>
+                    <span class="stat-label">Inspiring destinations</span>
+                </div>
+
+                <div class="stat-item">
+                    <span class="stat-number">01</span>
+                    <span class="stat-label">Simple planning platform</span>
+                </div>
+
+                <div class="stat-item">
+                    <span class="stat-number">₹0</span>
+                    <span class="stat-label">To start planning</span>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ==================== DESTINATIONS ==================== -->
+
+        <section class="section destinations-section" id="destinations">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <div>
+                        <span class="eyebrow">FIND YOUR ESCAPE</span>
+                        <h2>Places worth <em>exploring.</em></h2>
+                        <p class="section-description">
+                            From quiet hill stations to sunlit beaches,
+                            find the destination that feels like you.
+                        </p>
+                    </div>
+
+                    <a href="#planner" class="text-link">
+                        Plan a journey <span aria-hidden="true">↗</span>
+                    </a>
+                </div>
+
+
+                <div class="destination-toolbar reveal">
+
+                    <label class="search-box">
+                        <span aria-hidden="true">⌕</span>
+                        <input type="search" id="destinationSearch"
+                               placeholder="Search destinations..."
+                               aria-label="Search destinations">
+                    </label>
+
+                    <div class="filter-buttons" aria-label="Filter destinations">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="mountains">Mountains</button>
+                        <button class="filter-btn" data-filter="beaches">Beaches</button>
+                        <button class="filter-btn" data-filter="culture">Culture</button>
+                        <button class="filter-btn" data-filter="nature">Nature</button>
+                    </div>
+
+                </div>
+
+
+                <div class="destination-grid" id="destinationGrid">
+
+                    <article class="destination-card reveal"
+                             data-destination="Ooty"
+                             data-category="mountains nature"
+                             data-description="Cool weather, tea gardens and misty hills.">
+
+                        <div class="destination-image"
+                             style="--card-image:url('https://tse4.mm.bing.net/th/id/OIP.cfhVj-Sls_FeNA6RbjgUQgHaJQ?r=0&rs=1&pid=ImgDetMain&o=7&rm=3')">
+
+                            <span class="destination-tag">HILL STATION</span>
+                            <span class="destination-number">01</span>
+                        </div>
+
+                        <div class="destination-content">
+                            <div>
+                                <h3>Ooty</h3>
+                                <p class="destination-subtitle">Tamil Nadu, India</p>
+                                <p class="destination-description">
+                                    Tea gardens, mountain views and cool mornings.
+                                </p>
+                            </div>
+
+                            <div class="destination-bottom">
+                                <span class="destination-price">From ₹3,000 <small>/ person</small></span>
+                                <button class="text-button" data-destination="Ooty">Explore ↗</button>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <article class="destination-card reveal"
+                             data-destination="Munnar"
+                             data-category="mountains nature"
+                             data-description="Rolling tea plantations and peaceful mountain scenery.">
+
+                        <div class="destination-image"
+                             style="--card-image:url('https://tse3.mm.bing.net/th/id/OIP.B1-bvCMbx5OXpW_ph1EzXwHaI_?r=0&rs=1&pid=ImgDetMain&o=7&rm=3')">
+
+                            <span class="destination-tag">NATURE ESCAPE</span>
+                            <span class="destination-number">02</span>
+                        </div>
+
+                        <div class="destination-content">
+                            <div>
+                                <h3>Munnar</h3>
+                                <p class="destination-subtitle">Kerala, India</p>
+                                <p class="destination-description">
+                                    Emerald tea estates and mist-covered valleys.
+                                </p>
+                            </div>
+
+                            <div class="destination-bottom">
+                                <span class="destination-price">From ₹4,000 <small>/ person</small></span>
+                                <button class="text-button" data-destination="Munnar">Explore ↗</button>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <article class="destination-card reveal"
+                             data-destination="Goa"
+                             data-category="beaches"
+                             data-description="Golden beaches, coastal sunsets and relaxed evenings.">
+
+                        <div class="destination-image"
+                             style="--card-image:url('https://www.holidify.com/images/cmsuploads/compressed/goa-quick-guide_20180528135357.jpg')">
+
+                            <span class="destination-tag">BEACH GETAWAY</span>
+                            <span class="destination-number">03</span>
+                        </div>
+
+                        <div class="destination-content">
+                            <div>
+                                <h3>Goa</h3>
+                                <p class="destination-subtitle">India</p>
+                                <p class="destination-description">
+                                    Coastal sunsets, sandy beaches and local food.
+                                </p>
+                            </div>
+
+                            <div class="destination-bottom">
+                                <span class="destination-price">From ₹5,000 <small>/ person</small></span>
+                                <button class="text-button" data-destination="Goa">Explore ↗</button>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <article class="destination-card reveal"
+                             data-destination="Coorg"
+                             data-category="mountains nature"
+                             data-description="Coffee plantations, forest trails and waterfalls.">
+
+                        <div class="destination-image"
+                             style="--card-image:url('https://tse2.mm.bing.net/th/id/OIP.Q87CJTt9_00CnzGzsV7_9QHaIQ?r=0&rs=1&pid=ImgDetMain&o=7&rm=3')">
+
+                            <span class="destination-tag">GREEN RETREAT</span>
+                            <span class="destination-number">04</span>
+                        </div>
+
+                        <div class="destination-content">
+                            <div>
+                                <h3>Coorg</h3>
+                                <p class="destination-subtitle">Karnataka, India</p>
+                                <p class="destination-description">
+                                    Coffee-scented air and lush forest escapes.
+                                </p>
+                            </div>
+
+                            <div class="destination-bottom">
+                                <span class="destination-price">From ₹4,000 <small>/ person</small></span>
+                                <button class="text-button" data-destination="Coorg">Explore ↗</button>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <article class="destination-card reveal"
+                             data-destination="Jaipur"
+                             data-category="culture"
+                             data-description="Historic forts, royal architecture and colourful markets.">
+
+                        <div class="destination-image"
+                             style="--card-image:url('https://cdn1.goibibo.com/voy_ing/t_fs/rajasthan-jaipur-148046447735o.jpeg')">
+
+                            <span class="destination-tag">ROYAL HERITAGE</span>
+                            <span class="destination-number">05</span>
+                        </div>
+
+                        <div class="destination-content">
+                            <div>
+                                <h3>Jaipur</h3>
+                                <p class="destination-subtitle">Rajasthan, India</p>
+                                <p class="destination-description">
+                                    Pink streets, majestic forts and rich history.
+                                </p>
+                            </div>
+
+                            <div class="destination-bottom">
+                                <span class="destination-price">From ₹4,500 <small>/ person</small></span>
+                                <button class="text-button" data-destination="Jaipur">Explore ↗</button>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <article class="destination-card reveal"
+                             data-destination="Manali"
+                             data-category="mountains nature"
+                             data-description="Snow-capped peaks, pine forests and mountain adventures.">
+
+                        <div class="destination-image"
+                             style="--card-image:url('https://tse1.mm.bing.net/th/id/OIP.apTqCS4Ov3zBxCF9u1d20wHaE7?r=0&rs=1&pid=ImgDetMain&o=7&rm=3')">
+
+                            <span class="destination-tag">MOUNTAIN ADVENTURE</span>
+                            <span class="destination-number">06</span>
+                        </div>
+
+                        <div class="destination-content">
+                            <div>
+                                <h3>Manali</h3>
+                                <p class="destination-subtitle">Himachal Pradesh, India</p>
+                                <p class="destination-description">
+                                    Mountain roads, pine forests and cool escapes.
+                                </p>
+                            </div>
+
+                            <div class="destination-bottom">
+                                <span class="destination-price">From ₹7,000 <small>/ person</small></span>
+                                <button class="text-button" data-destination="Manali">Explore ↗</button>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <article class="destination-card reveal"
+                             data-destination="Alleppey"
+                             data-category="nature"
+                             data-description="Serene backwaters, houseboats and palm-lined waterways.">
+
+                        <div class="destination-image"
+                             style="--card-image:url('https://hblimg.mmtcdn.com/content/hubble/img/new_dest_imagemar/mmt/activities/m_Alleppey_1_l_1316_2400.jpg')">
+
+                            <span class="destination-tag">BACKWATER BLISS</span>
+                            <span class="destination-number">07</span>
+                        </div>
+
+                        <div class="destination-content">
+                            <div>
+                                <h3>Alleppey</h3>
+                                <p class="destination-subtitle">Kerala, India</p>
+                                <p class="destination-description">
+                                    Palm-fringed canals and peaceful backwaters.
+                                </p>
+                            </div>
+
+                            <div class="destination-bottom">
+                                <span class="destination-price">From ₹3,500 <small>/ person</small></span>
+                                <button class="text-button" data-destination="Alleppey">Explore ↗</button>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <article class="destination-card reveal"
+                             data-destination="Agra"
+                             data-category="culture"
+                             data-description="Iconic Mughal architecture and timeless landmarks.">
+
+                        <div class="destination-image"
+                             style="--card-image:url('https://i.natgeofe.com/n/8eba070d-14e5-4d07-8bab-9db774029063/93080.jpg?w=1200')">
+
+                            <span class="destination-tag">ICONIC LANDMARKS</span>
+                            <span class="destination-number">08</span>
+                        </div>
+
+                        <div class="destination-content">
+                            <div>
+                                <h3>Agra</h3>
+                                <p class="destination-subtitle">Uttar Pradesh, India</p>
+                                <p class="destination-description">
+                                    World-famous architecture and Mughal heritage.
+                                </p>
+                            </div>
+
+                            <div class="destination-bottom">
+                                <span class="destination-price">From ₹3,000 <small>/ person</small></span>
+                                <button class="text-button" data-destination="Agra">Explore ↗</button>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <article class="destination-card reveal"
+                             data-destination="Andaman Islands"
+                             data-category="beaches nature"
+                             data-description="Clear waters, tropical beaches and island adventures.">
+
+                        <div class="destination-image"
+                             style="--card-image:url('https://plus.unsplash.com/premium_photo-1668883189361-9c754861dbd6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D')">
+
+                            <span class="destination-tag">ISLAND PARADISE</span>
+                            <span class="destination-number">09</span>
+                        </div>
+
+                        <div class="destination-content">
+                            <div>
+                                <h3>Andaman Islands</h3>
+                                <p class="destination-subtitle">Bay of Bengal, India</p>
+                                <p class="destination-description">
+                                    Turquoise waters, coral reefs and island life.
+                                </p>
+                            </div>
+
+                            <div class="destination-bottom">
+                                <span class="destination-price">From ₹12,000 <small>/ person</small></span>
+                                <button class="text-button" data-destination="Andaman Islands">Explore ↗</button>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
+                <p class="price-disclaimer">
+                    Destination prices are illustrative starting estimates, not live booking prices.
+                </p>
+
+            </div>
+        </section>
+                <!-- ==================== BUDGET CALCULATOR ==================== -->
+
+        <section class="section budget-section" id="budget">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <div>
+                        <span class="eyebrow">TRAVEL WITHOUT GUESSWORK</span>
+                        <h2>Your adventure.<br><em>Your budget.</em></h2>
+                        <p class="section-description">
+                            Build a realistic trip estimate before you pack.
+                            Adjust the expenses and let TripVista do the maths.
+                        </p>
+                    </div>
+
+                    <div class="budget-heading-badge">
+                        <span class="badge-icon">₹</span>
+                        <span>Smart budget planning</span>
+                    </div>
+                </div>
+
+
+                <div class="calculator-layout reveal">
+
+                    <!-- CALCULATOR INPUTS -->
+
+                    <form id="budgetForm" class="calculator-card">
+
+                        <div class="card-heading">
+                            <div>
+                                <span class="eyebrow">STEP 01</span>
+                                <h3>Build your budget</h3>
+                            </div>
+                            <span class="card-heading-icon" aria-hidden="true">✳</span>
+                        </div>
+
+                        <div class="form-grid">
+
+                            <div class="form-group full-width">
+                                <label for="budgetDestination">Destination</label>
+                                <select id="budgetDestination" name="destination">
+                                    <option value="Ooty">Ooty</option>
+                                    <option value="Munnar">Munnar</option>
+                                    <option value="Goa">Goa</option>
+                                    <option value="Coorg">Coorg</option>
+                                    <option value="Jaipur">Jaipur</option>
+                                    <option value="Manali">Manali</option>
+                                    <option value="Alleppey">Alleppey</option>
+                                    <option value="Agra">Agra</option>
+                                    <option value="Andaman Islands">Andaman Islands</option>
+                                    <option value="Other">Other destination</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="budgetTravelers">Travellers</label>
+                                <input type="number" id="budgetTravelers"
+                                       min="1" max="100" value="2" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="budgetDays">Trip duration (days)</label>
+                                <input type="number" id="budgetDays"
+                                       min="1" max="365" value="3" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="budgetTravel">Travel costs (₹)</label>
+                                <input type="number" id="budgetTravel"
+                                       min="0" max="100000000" step="100" value="2000" required>
+                                <small>Total travel cost for everyone</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="budgetStay">Accommodation (₹)</label>
+                                <input type="number" id="budgetStay"
+                                       min="0" max="100000000" step="100" value="1500" required>
+                                <small>Cost per room per night</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="budgetRooms">Rooms required</label>
+                                <input type="number" id="budgetRooms"
+                                       min="1" max="100" value="1" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="budgetFood">Food (₹)</label>
+                                <input type="number" id="budgetFood"
+                                       min="0" max="1000000" step="50" value="400" required>
+                                <small>Per person per day</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="budgetActivities">Activities (₹)</label>
+                                <input type="number" id="budgetActivities"
+                                       min="0" max="100000000" step="100" value="1000" required>
+                                <small>Total for everyone</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="budgetOther">Other expenses (₹)</label>
+                                <input type="number" id="budgetOther"
+                                       min="0" max="100000000" step="100" value="500" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="budgetLimit">Your budget limit (₹)</label>
+                                <input type="number" id="budgetLimit"
+                                       min="0" max="1000000000" step="500" value="10000">
+                                <small>Optional — enter 0 to skip</small>
+                            </div>
+
+                        </div>
+
+                        <div class="calculator-actions">
+                            <button type="submit" class="btn btn-primary btn-full">
+                                Calculate My Budget <span aria-hidden="true">↗</span>
+                            </button>
+
+                            <button type="button" class="reset-button" id="resetBudget">
+                                Reset values
+                            </button>
+                        </div>
+
+                        <p class="calculator-note">
+                            Estimates use the amounts you enter. Actual prices may vary.
+                        </p>
+
+                    </form>
+
+
+                    <!-- CALCULATOR RESULTS -->
+
+                    <aside class="budget-result-card" aria-live="polite">
+
+                        <div class="result-top">
+                            <span class="eyebrow result-eyebrow">YOUR TRIP ESTIMATE</span>
+                            <span class="result-icon" aria-hidden="true">↗</span>
+                        </div>
+
+                        <p class="result-destination" id="resultDestination">Your trip to Ooty</p>
+
+                        <p class="result-total-label">Estimated total cost</p>
+
+                        <h3 class="result-total" id="resultTotal">₹6,900</h3>
+
+                        <div class="result-per-person">
+                            <span>Cost per person</span>
+                            <strong id="resultPerPerson">₹3,450</strong>
+                        </div>
+
+                        <div class="budget-progress-area">
+                            <div class="progress-label">
+                                <span id="budgetStatus">Budget overview</span>
+                                <span id="budgetPercentage">69%</span>
+                            </div>
+
+                            <div class="progress-track">
+                                <div class="progress-fill" id="budgetProgress"></div>
+                            </div>
+
+                            <p id="budgetMessage" class="budget-message">
+                                Adjust your expenses to see your estimate.
+                            </p>
+                        </div>
+
+                        <div class="expense-breakdown">
+
+                            <div class="breakdown-heading">
+                                <h4>Expense breakdown</h4>
+                                <span>INR (₹)</span>
+                            </div>
+
+                            <div class="breakdown-row">
+                                <span><i class="expense-dot travel-dot"></i>Travel</span>
+                                <strong id="resultTravel">₹2,000</strong>
+                            </div>
+
+                            <div class="breakdown-row">
+                                <span><i class="expense-dot stay-dot"></i>Accommodation</span>
+                                <strong id="resultStay">₹3,000</strong>
+                            </div>
+
+                            <div class="breakdown-row">
+                                <span><i class="expense-dot food-dot"></i>Food</span>
+                                <strong id="resultFood">₹2,400</strong>
+                            </div>
+
+                            <div class="breakdown-row">
+                                <span><i class="expense-dot activity-dot"></i>Activities</span>
+                                <strong id="resultActivities">₹1,000</strong>
+                            </div>
+
+                            <div class="breakdown-row">
+                                <span><i class="expense-dot other-dot"></i>Other expenses</span>
+                                <strong id="resultOther">₹500</strong>
+                            </div>
+
+                        </div>
+
+                        <button type="button" class="btn btn-light-outline btn-full"
+                                id="saveBudgetTrip">
+                            Save This Estimate
+                        </button>
+
+                        <p class="result-feedback" id="budgetFeedback" role="status"></p>
+
+                    </aside>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ==================== TRIP PLANNER ==================== -->
+
+        <section class="section planner-section" id="planner">
+
+            <div class="container planner-layout">
+
+                <div class="planner-copy reveal">
+                    <span class="eyebrow">MAKE IT HAPPEN</span>
+                    <h2>From daydream<br>to <em>departure.</em></h2>
+
+                    <p>
+                        Choose your destination and travel dates.
+                        Start organising your next adventure in one place.
+                    </p>
+
+                    <div class="planner-benefit">
+                        <span class="benefit-icon">✓</span>
+                        <div>
+                            <strong>Simple trip setup</strong>
+                            <p>Enter your travel details in a few steps.</p>
+                        </div>
+                    </div>
+
+                    <div class="planner-benefit">
+                        <span class="benefit-icon">✓</span>
+                        <div>
+                            <strong>Budget-aware planning</strong>
+                            <p>Estimate expenses before making commitments.</p>
+                        </div>
+                    </div>
+
+                    <div class="planner-benefit">
+                        <span class="benefit-icon">✓</span>
+                        <div>
+                            <strong>Keep your plans together</strong>
+                            <p>Save demo trips locally in your browser.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <form id="quickPlanForm" class="planner-card reveal">
+
+                    <div class="card-heading">
+                        <div>
+                            <span class="eyebrow">YOUR NEXT ADVENTURE</span>
+                            <h3>Plan your trip</h3>
+                        </div>
+                        <span class="planner-card-icon" aria-hidden="true">✈</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="destination">Where do you want to go?</label>
+                        <select id="destination" name="destination" required>
+                            <option value="">Choose a destination</option>
+                            <option value="Ooty">Ooty, Tamil Nadu</option>
+                            <option value="Munnar">Munnar, Kerala</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Coorg">Coorg, Karnataka</option>
+                            <option value="Jaipur">Jaipur, Rajasthan</option>
+                            <option value="Manali">Manali, Himachal Pradesh</option>
+                            <option value="Alleppey">Alleppey, Kerala</option>
+                            <option value="Agra">Agra, Uttar Pradesh</option>
+                            <option value="Andaman Islands">Andaman Islands</option>
+                            <option value="Other">Other destination</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="travellers">Number of travellers</label>
+                        <input type="number" id="travellers" name="travellers"
+                               min="1" max="100" value="2" required>
+                    </div>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="startDate">Departure date</label>
+                            <input type="date" id="startDate" name="startDate" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="endDate">Return date</label>
+                            <input type="date" id="endDate" name="endDate" required>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="travelStyle">Travel style</label>
+                        <select id="travelStyle" name="travelStyle">
+                            <option value="Relaxed">Relaxed escape</option>
+                            <option value="Adventure">Adventure</option>
+                            <option value="Culture">Culture and heritage</option>
+                            <option value="Nature">Nature and wildlife</option>
+                            <option value="Budget">Budget-friendly</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">
+                        Create My Trip <span aria-hidden="true">↗</span>
+                    </button>
+
+                    <p id="planMessage" class="form-feedback" role="status"></p>
+
+                    <div id="tripPlanResult" class="trip-plan-result" hidden></div>
+
+                </form>
+
+            </div>
+        </section>
+                <!-- ==================== MY TRIPS ==================== -->
+
+        <section class="section my-trips-section" id="myTrips">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <div>
+                        <span class="eyebrow">YOUR TRAVEL JOURNAL</span>
+                        <h2>Trips worth <em>remembering.</em></h2>
+                        <p class="section-description">
+                            Keep track of your saved budget estimates and trip plans.
+                        </p>
+                    </div>
+                </div>
+
+                <div id="savedTrips" class="saved-trips-grid">
+                    <div class="empty-trips">
+                        <span class="empty-trips-icon" aria-hidden="true">✈</span>
+                        <h3>Your next adventure starts here.</h3>
+                        <p>Calculate a budget or create a trip to see it here.</p>
+                        <a href="#budget" class="text-link">Calculate a budget ↗</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ==================== CHATBOT PROMO ==================== -->
+
+        <section class="assistant-section">
+
+            <div class="container">
+
+                <div class="assistant-banner reveal">
+
+                    <div class="assistant-orb" aria-hidden="true">
+                        <span>✦</span>
+                    </div>
+
+                    <div class="assistant-banner-copy">
+                        <span class="eyebrow">YOUR PLANNING COMPANION</span>
+                        <h2>Big trip ideas?<br><em>Let's talk.</em></h2>
+                        <p>
+                            Ask TripVista for destination ideas, packing tips,
+                            travel inspiration, and budget-planning guidance.
+                        </p>
+                    </div>
+
+                    <button class="btn btn-primary" id="openChat">
+                        Chat with TripVista <span aria-hidden="true">↗</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================== FEATURES ==================== -->
+
+        <section class="section features-section" id="features">
+
+            <div class="container">
+
+                <div class="section-heading centered-heading reveal">
+                    <span class="eyebrow">TRAVEL, SIMPLIFIED</span>
+                    <h2>Everything you need.<br><em>One thoughtful space.</em></h2>
+                    <p class="section-description">
+                        Less time worrying about the details.
+                        More time looking forward to the journey.
+                    </p>
+                </div>
+
+
+                <div class="features-grid">
+
+                    <article class="feature-card reveal">
+                        <span class="feature-icon">◎</span>
+                        <h3>Discover</h3>
+                        <p>Explore destinations and find places that match your travel style.</p>
+                    </article>
+
+                    <article class="feature-card reveal">
+                        <span class="feature-icon">₹</span>
+                        <h3>Budget</h3>
+                        <p>Estimate your expenses and compare the total with your budget limit.</p>
+                    </article>
+
+                    <article class="feature-card reveal">
+                        <span class="feature-icon">↗</span>
+                        <h3>Organise</h3>
+                        <p>Put your destination, dates, travellers and travel style in one plan.</p>
+                    </article>
+
+                    <article class="feature-card reveal">
+                        <span class="feature-icon">✳</span>
+                        <h3>Get inspired</h3>
+                        <p>Use the built-in demo travel assistant for ideas and practical tips.</p>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ==================== ABOUT US ==================== -->
+
+        <section class="section about-section" id="about">
+
+            <div class="container about-layout">
+
+                <div class="about-visual reveal">
+
+                    <div class="about-image"></div>
+
+                    <div class="about-note">
+                        <span class="about-note-icon">✦</span>
+                        <div>
+                            <strong>Thoughtful travel planning</strong>
+                            <p>Made for curious explorers.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="about-copy reveal">
+
+                    <span class="eyebrow">THE STORY BEHIND TRIPVISTA</span>
+
+                    <h2>Travel should feel like <em>freedom.</em></h2>
+
+                    <p>
+                        TripVista is a travel-planning micro-project built around
+                        one simple idea: exploring the world should feel exciting,
+                        not overwhelming.
+                    </p>
+
+                    <p>
+                        By bringing destination discovery, trip planning, budget
+                        estimation and travel guidance together, TripVista helps
+                        travellers organise their ideas before setting off.
+                    </p>
+
+                    <p>
+                        Our goal is to make planning clearer, more approachable,
+                        and easier to understand — one journey at a time.
+                    </p>
+
+                    <a href="#planner" class="btn btn-primary">
+                        Start Planning <span aria-hidden="true">↗</span>
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ==================== NEWSLETTER / CTA ==================== -->
+
+        <section class="closing-section">
+
+            <div class="container closing-content reveal">
+                <span class="eyebrow">THE WORLD IS WAITING</span>
+                <h2>Where will you go <em>next?</em></h2>
+                <p>Pick a place. Set a budget. Make the journey yours.</p>
+
+                <div class="closing-actions">
+                    <a href="#destinations" class="btn btn-primary">
+                        Find Your Destination
+                    </a>
+                    <a href="#budget" class="btn btn-outline">
+                        Plan My Budget
+                    </a>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+        <!-- ==================== FOOTER ==================== -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-main">
+
+            <div class="footer-brand">
+                <a href="index.html#home" class="brand">
+                    <span class="brand-icon">T</span>
+                    <span>Trip<span class="brand-accent">Vista</span></span>
+                </a>
+
+                <p>
+                    Thoughtful planning for journeys<br>
+                    you'll never forget.
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Explore</h3>
+                <a href="#destinations">Destinations</a>
+                <a href="#planner">Trip Planner</a>
+                <a href="#myTrips">My Trips</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Tools & Account</h3>
+                <a href="#budget">Budget Calculator</a>
+                <button class="footer-link" id="footerChat">Travel Assistant</button>
+                <a href="home.html" class="footer-link">Dashboard</a>
+                <a href="signin.html" class="footer-link">Sign In</a>
+                <a href="signup.html" class="footer-link">Sign Up</a>
+                <a href="register.html" class="footer-link">Register</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Discover</h3>
+                <a href="#about">About Us</a>
+                <a href="#features">Our Features</a>
+                <a href="#home">Back to Top ↑</a>
+            </div>
+
+        </div>
+
+        <div class="container footer-bottom">
+            <p>© <span id="currentYear"></span> TripVista. Built for curious explorers.</p>
+            <p class="footer-disclaimer">
+                A student project. Travel prices and assistant responses are illustrative.
+            </p>
+        </div>
+
+    </footer>
+
+
+    <!-- Authentication is handled by signin.html, signup.html and register.html. -->
+
+
+    <!-- ==================== CHATBOT ==================== -->
+
+    <button class="chat-launcher" id="chatLauncher"
+            aria-label="Open TripVista travel assistant"
+            aria-controls="chatPanel"
+            aria-expanded="false">
+        <span aria-hidden="true">✦</span>
+        <span class="chat-launcher-label">Ask TripVista</span>
+    </button>
+
+
+    <section class="chat-panel" id="chatPanel"
+             aria-label="TripVista travel assistant"
+             hidden>
+
+        <div class="chat-header">
+
+            <div class="chat-avatar">T</div>
+
+            <div class="chat-header-copy">
+                <strong>TripVista Assistant</strong>
+                <span><i class="online-dot"></i> Demo travel assistant</span>
+            </div>
+
+            <button id="closeChat" class="chat-close"
+                    aria-label="Close chat">×</button>
+
+        </div>
+
+
+        <div class="chat-messages" id="chatMessages"
+             aria-live="polite">
+
+            <div class="chat-bubble assistant-bubble">
+                Hey, traveller! 👋 I'm TripVista's demo assistant.
+                Ask me about destinations, packing, trip planning or budgeting.
+            </div>
+
+            <div class="chat-prompts">
+                <button type="button" data-prompt="Suggest a budget trip">Budget trip ideas</button>
+                <button type="button" data-prompt="What should I pack?">Packing checklist</button>
+                <button type="button" data-prompt="How do I plan a trip?">Planning tips</button>
+            </div>
+
+        </div>
+
+
+        <form id="chatForm" class="chat-form">
+
+            <label for="chatInput" class="sr-only">Your message</label>
+
+            <input type="text" id="chatInput"
+                   placeholder="Ask a travel question..."
+                   maxlength="500" autocomplete="off" required>
+
+            <button type="submit" aria-label="Send message">↑</button>
+
+        </form>
+
+        <p class="chat-disclaimer">
+            Demo responses only. Verify important travel information independently.
+        </p>
+
+    </section>
+
+
+    <!-- ==================== TOAST ==================== -->
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+</body>
+</html>
